@@ -10,7 +10,7 @@ void setup()
 }
 void draw()
 {
-  background(32);
+  background(255);
   for (int i = 0; i < stars.length; i++) {
     stars[i].show();
     stars[i].move();
@@ -33,7 +33,7 @@ class Particle
   }
   void show() {
     noStroke();
-    fill((int)myColor);
+    fill((int)myColor, (int)myColor/2,(int)myColor/2);
     ellipse((float)myX, (float)myY, (float)radius, (float)radius);
   }
 }
@@ -48,15 +48,15 @@ class Comet extends Particle
     angle = Math.random()*3*Math.PI-1;
     myColor = color(0, 0, 60);
     radius = 50;
-    opacity = 64;
-  }
+    opacity = 64; 
+  } 
   void move(){
-    myX += Math.cos(angle)*speed;
-    myY += Math.sin(angle)*speed;
+    myX += Math.cos(angle)*0.1;
+    myY += Math.sin(angle)*0.1;
   }
   void show(){
     noStroke();
-    fill((int)myColor, (float)opacity);
-    ellipse((float)myX, (float)myY, (float)radius, (float)radius);
+    fill(255, 128, 64, 128);
+    ellipse((float)myX, (float)myY, 250, 250);
   }
 }
