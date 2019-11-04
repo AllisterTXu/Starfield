@@ -6,7 +6,7 @@ void setup()
   for (int i = 0; i < stars.length; i++) {
     stars[i] = new Particle();
   }
-  stars[0] = new Comet();
+  stars[0] = new Sun();
 }
 void draw()
 {
@@ -38,10 +38,10 @@ class Particle
   }
 }
 
-class Comet extends Particle
+class Sun extends Particle
 {
   double myX, myY, speed, angle, myColor, radius, opacity;
-  Comet(){
+  Sun(){
     myX = Math.random()*550;
     myY = Math.random()*550;
     speed = Math.random()*20;
