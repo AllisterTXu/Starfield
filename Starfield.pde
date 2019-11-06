@@ -15,6 +15,7 @@ void draw()
     stars[i].show();
     stars[i].move();
     stars[i].slow();
+    stars[i].swirl();
   }
 }
 class Particle
@@ -43,6 +44,9 @@ class Particle
     } else {
       speed = 1;
     }
+  }
+  void swirl() {
+    angle += Math.PI/360;
   }
 }
 
